@@ -1,0 +1,36 @@
+.landing-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center/cover;
+  height: 100vh;
+  color: white;
+}
+
+.landing-left {
+  max-width: 40%;
+}
+
+.landing-left h1 {
+  font-size: 36px;
+}
+
+.landing-left p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.landing-left button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.landing-right {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  max-width: 55%;
+}
