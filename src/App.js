@@ -1,20 +1,31 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Navbar';
-import LandingPage from './LandingPage';
-import Plants from './Plants';
-import Cart from './Cart';
+
+import React, { useState } from 'react';
+import ProductList from './ProductList'; // Keep this one
+import CartItem from './CartItem';       // Keep this one
+import Navbar from './Navbar';           // Keep this one
 
 function App() {
+  const [showCart, setShowCart] = useState(false);
+
+  const handleShowCart = () => {
+    setShowCart(true);
+  };
+
+  const handleContinueShopping = () => {
+    setShowCart(false);
+  };
+
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/plants" element={<Plants />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </Router>
+    <div>
+      {/* Assuming a Navbar component */}
+      <Navbar onCartClick={handleShowCart} />
+
+      {showCart ? (
+        <CartItem onContinueShopping={handleContinueShopping} />
+      ) : (
+        <ProductList />
+      )}
+    </div>
   );
 }
 
